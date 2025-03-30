@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>(완성)ver2 메인화면</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<header>
+  <h1>AIPICK</h1>
+  <div class="header-buttons">
+      <button class="entry-home" title="홈"><i class="fas fa-house"></i>    </button>
+      <button title="내 계정"><i class="fas fa-user-circle"></i></button>
+    </div>
+</header>
+
+<main class="startpage" style='display:block;'  >
+  <div class="top-startpage">
+   <h4>바로가기</h4>
+   
+   <ul class="myitems-startpage">
+     <li><button><img src="" alt="item1"></button></li>
+     <li><button><img src="" alt="item2"></button></li>
+     <li><button><img src="" alt="itme3"></button></li>
+   </ul>
+    
+  </div>
+  
+  <div class="main-startpage">
+    
+    <button class="entry-aItool">새로운 <h3>AITOOL</h3> 찾기</button>
+   <button class="entry-mytool"> <h3>AITOOL</h3> 관리</button>
+   <button><h3>AITIP</h3></button>
+    
+  </div>
+  
+  <div class="buttom-startpage">
+    <p>요즘 핫한 tool</p>
+    <ul>
+      <li><button><img src="" alt="광고1"></button></li>
+      <li><button><img src="" alt="광고2"></button></li>
+      <li><button><img src="" alt="광고3"></button></li>
+    </ul>
+    
+  </div>
+</main>
+
+
+
+
+<div class="wholeSwiper  Grandpr-mytool" style='display:none;'>
+   <div class="wholewrapper">
+     <div class="wholeslide">
+         <main class="mytool" >
+  <div class="top-mytool">
+   
+    
+  </div>
+  
+  <div class="main-mytool">
+    <h2>My tool</h2>
+     <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="chatgpt logo" />
+            <h3>ChatGPT</h3>
+            <p>구독료: 12,000원</p>
+            <p>구독기간: 12개월</p>
+            <p>총지출금액: 144,000원</p>
+            <button>구독해지</button>
+            <button>계좌전환</button>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Grammarly_Logo.png" alt="grammarly logo" />
+            <h3>Grammarly</h3>
+            <p>구독료: 10,000원</p>
+            <p>구독기간: 6개월</p>
+            <p>총지출금액: 60,000원</p>
+            <button>해지하기</button>
+            <button>계좌변경</button>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="tool-card">
+            <img src="https://via.placeholder.com/40" alt="기타툴 로고" />
+            <h3>기타 툴</h3>
+            <p>구독료: 8,000원</p>
+            <p>구독기간: 3개월</p>
+            <p>총지출금액: 24,000원</p>
+            <button>구독하기</button>
+            <button>해지하기</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="buttom-mytool">
+    <button><img src="https://img.icons8.com/ios/50/double-down--v1.png" alt="" width="15">캘린더 보기</button>
+  </div>
+  
+
+
+
+
+
+
+
+</main>
+       
+       
+     </div>
+     <div class="wholeslide">
+       <section class="calendar-section">
+  <h2>📅 구독 캘린더</h2>
+  <div class="calendar">
+    <div class="calendar-header">
+      <button id="prev-month">◀</button>
+      <span id="current-month">2025년 3월</span>
+      <button id="next-month">▶</button>
+    </div>
+    <div class="calendar-grid">
+      <div class="day-name">일</div>
+      <div class="day-name">월</div>
+      <div class="day-name">화</div>
+      <div class="day-name">수</div>
+      <div class="day-name">목</div>
+      <div class="day-name">금</div>
+      <div class="day-name">토</div>
+      <!-- 날짜 셀은 JS로 생성 -->
+    </div>
+  </div>
+</section>
+
+       
+       
+       
+       
+     </div>
+   </div>
+ </div>
+
+
+
+
+ <main class="aitool" style='display:none;'>
+    <div class="top-aitool">
+<!--       기능:과정나타냄 현재 과정에 볼드체 -->
+      <ul>
+        <li id="section1">AIPI 설문</li>
+        <li id="section2">자동추천</li>
+        <li id="section3">결제하기</li>
+      </ul>
+    </div>
+    <div class="main-aitool">
+      <div id="tutorial">
+        <h2>답변방법</h2>
+        <div><h3>특정 기능</h3>
+        <p>기능을 보고 해당하는 버튼을 눌러주세요</p>
+        <ul>
+          <li><button class="example">0</button>전혀필요없다</li>
+          <li><button class="example">1</button>굳이 AI툴을 쓸필요는 없다</li>
+          <li><button class="example">2</button>무료로 있으면 쓸것같다</li>
+          <li><button class="example">3</button>충분히 유료버전을 쓸것이다.</li>
+          <li><button class="example">4</button>내가 ai툴을 쓰는 목적이다.</li>
+        </ul>
+        
+        <button class="next tutorialbutton" >이해했어요</button>
+          
+        </div>
+        
+        
+      </div>
+     <div id="quizSection"style='display:none;'>
+      <div id="section-name">13213</div>
+      <div id="question-box"></div>
+      <button id="next-btn">다음</button>
+    </div>
+      
+      
+   <div id="result-section" style="display:none;">
+<!--         <p id="result-text"></p> -->
+      <ul class="output-aitool item1">
+        <li class="img"></li>
+        <li class="name"></li>
+        <li class="price"></li>
+      </ul>
+      <ul class="output-aitool item2">
+        <li class="img"></li>
+        <li class="name"></li>
+        <li class="price"></li>
+      </ul>
+      <ul class="output-aitool item3">
+        <li class="img"></li>
+        <li class="name"></li>
+        <li class="price"></li>
+      </ul>
+     
+      </div>
+  
+    
+    </div>
+
+      
+     
+      
+    
+  <div class="buttom-aitool" style="display:none;">
+   <div class="progress-container"  style="display:none;">
+     
+     
+     <div class="progress-bar" id='progressBar'>
+       
+       
+       
+     </div>
+       
+     
+     </div>
+   <div class="result-buttons" style="display:none;">
+     <div class="price-Inform">
+       <ul class="part row1">
+         <li>총 구독료</li>
+         <li class="output"></li>
+       </ul>
+       <ul class="part row2">
+         <li>일회성 지불</li>
+         <li class="output"></li>
+       </ul>
+       <ul class="part row3">
+         <li>총결제금액</li>
+         <li class="output"></li>
+       </ul>
+     </div>
+     
+     <div><button id="again">다시 하기</button>
+      
+      <button class="quizeTOpay">결제하기</button>
+        
+      </div>
+     
+   </div>   
+      
+    </div>
+  </main>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"> </script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
