@@ -832,7 +832,9 @@ const wholeswiper = new Swiper(".wholeSwiper",{
       }
     });
   }
-}
+},
+  observer: true,	// 추가
+  observeParents: true,	// 추가  
 
   
   
