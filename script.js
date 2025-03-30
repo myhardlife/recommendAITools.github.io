@@ -811,24 +811,27 @@ const wholeswiper = new Swiper(".wholeSwiper",{
   grabCursor:true,
   mousewheel:true,
   
-   on: {
-    slideChangeTransitionEnd: function () {
-      const slides = document.querySelectorAll('.wholeslide');
-      slides.forEach((slide, index) => {
-        if (index === wholeswiper.activeIndex) {
-          // 현재 슬라이드는 보이게
-          // slide.style.display = 'block';
-          slide.style.opacity = '1';
-          slide.style.pointerEvents = 'auto';
-        } else {
-          // 다른 슬라이드는 숨기되, 다시 보여질 수 있도록 유지
-          // slide.style.display = 'none';
-          slide.style.opacity = '0';
-          slide.style.pointerEvents = 'none';
+ on: {
+  slideChangeTransitionEnd: function () {
+    const slides = document.querySelectorAll('.wholeslide');
+    slides.forEach((slide, index) => {
+      if (index === wholeswiper.activeIndex) {
+        slide.style.opacity = '1';
+        slide.style.pointerEvents = 'auto';
+
+        // 👉 캘린더 슬라이드일 때만 캘린더 다시 렌더링
+        if (slide.querySelector('.calendar-section')) {
+          renderCalendar(currentYear, currentMonth);
         }
-      });
-    }
+
+      } else {
+        slide.style.opacity = '0';
+        slide.style.pointerEvents = 'none';
+      }
+    });
   }
+}
+
   
   
   
