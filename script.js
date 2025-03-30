@@ -803,6 +803,7 @@ const monthNames = ["1월", "2월", "3월", "4월", "5월", "6월",
   
  
   
+  
 const wholeswiper = new Swiper(".wholeSwiper",{
   wrapperClass:"wholewrapper",
   slideClass:"wholeslide",
@@ -811,37 +812,43 @@ const wholeswiper = new Swiper(".wholeSwiper",{
   grabCursor:true,
   mousewheel:true,
   
- on: {
-  slideChangeTransitionEnd: function () {
-    const slides = document.querySelectorAll('.wholeslide');
-    slides.forEach((slide, index) => {
-      if (index === wholeswiper.activeIndex) {
-        slide.style.opacity = '1';
-        slide.style.pointerEvents = 'auto';
-        console.log("현재 슬라이드:", index);
-        console.log("캘린더 섹션 찾기:", slide.querySelector('.calendar-section'));
-
-        // 👉 캘린더 슬라이드일 때만 캘린더 다시 렌더링
-        if (slide.querySelector('.calendar-section')) {
-          renderCalendar(currentYear, currentMonth);
-        }
-
-      } else {
-        slide.style.opacity = '0';
-        slide.style.pointerEvents = 'none';
-      }
-    });
-  }
-},
-  observer: true,	// 추가
-  observeParents: true,	// 추가  
+   on: {
+    slideChangeTransitionEnd: function () {
+      const slides = document.querySelectorAll('.wholeslide');
+      
+      slides.forEach((slide, index) => {
+       
+        
+        
+        
+        
+        if (index === wholeswiper.activeIndex) {
+          // 현재 슬라이드는 보이게
+          // slide.style.display = 'block';
+          slide.style.opacity = '1';
+          slide.style.pointerEvents = 'auto';
+        } else {
+          // 다른 슬라이드는 숨기되, 다시 보여질 수 있도록 유지
+          // slide.style.display = 'none';
+          slide.style.opacity = '0';
+          slide.style.pointerEvents = 'none';
+        };
+        
+      });
+      
+      if(wholeswiper.activeIndex===1){
+        makeWholeCalendar(currentYear,currentMonth);
+      };
+      
 
   
   
+  
+}
+   
+   }
   
 });
-  
-  
   
   
   
@@ -864,7 +871,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //캘린더생성함수
 
- const renderCalendar=function(year, month) {
+function renderCalendar(year, month) {
   const monthText = document.getElementById('current-month');
   const grid = document.querySelector('.calendar-grid');
 
@@ -885,6 +892,9 @@ document.addEventListener("DOMContentLoaded", () => {
     empty.classList.add('date-cell');
     empty.style.background = "transparent";
     grid.appendChild(empty);
+    
+    
+    
   }
 
   // 날짜 셀 추가
@@ -895,57 +905,33 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.appendChild(cell);
   }
 }
+function makeWholeCalendar(year,month) {
   
-renderCalendar(currentYear, currentMonth);
+  renderCalendar(year,month);
   
-    // 이전/다음 월 버튼
-document.getElementById('prev-month').addEventListener('click', () => {
+  document.getElementById('prev-month').addEventListener('click', () => {
   currentMonth--;
   if (currentMonth < 0) {
     currentMonth = 11;
     currentYear--;
   }
-  renderCalendar(currentYear, currentMonth);
+  renderCalendar(year, month);
 });
-
+  
+  
 document.getElementById('next-month').addEventListener('click', () => {
   currentMonth++;
   if (currentMonth > 11) {
     currentMonth = 0;
     currentYear++;
   }
-  renderCalendar(currentYear, currentMonth);
+  renderCalendar(year, month);
 });
   
-
+};
+// renderCalendar(currentYear, currentMonth);
   
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // 이전/다음 월 버튼
 
 
 
