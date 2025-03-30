@@ -818,6 +818,8 @@ const wholeswiper = new Swiper(".wholeSwiper",{
       if (index === wholeswiper.activeIndex) {
         slide.style.opacity = '1';
         slide.style.pointerEvents = 'auto';
+        console.log("현재 슬라이드:", index);
+        console.log("캘린더 섹션 찾기:", slide.querySelector('.calendar-section'));
 
         // 👉 캘린더 슬라이드일 때만 캘린더 다시 렌더링
         if (slide.querySelector('.calendar-section')) {
