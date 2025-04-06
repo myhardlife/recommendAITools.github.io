@@ -17,7 +17,6 @@ Uncaught TypeError: Cannot read properties of undefined (reading 'logo')
 #### 민감도가 떨어짐
 
 [0, 0, 0, 0, 0, 4, 4, 4, 2, 1, 0, 0, 0, 0, 4, 0, 4, 2, 2, 1, 1, 2, 1, 2, 4]
-
 이렇게 답변했는데 코드 프로그램만 3개 추천. 영상쪽 무료 툴도 추천해주면 만족도 상승할듯 
 
 
